@@ -1,39 +1,45 @@
-# Transaction Fraud Detection & Data Quality Pipeline
+# 🛡️ Fraud Detection Data Analysis & Modeling
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
-![Pandas](https://img.shields.io/badge/pandas-data__wrangling-150458.svg)
-![Domain](https://img.shields.io/badge/focus-data__quality__%26__analytics-orange.svg)
+This repository contains a complete Data Science pipeline developed in Python to identify anomalous behaviors, audit data quality, and build predictive Machine Learning models for financial fraud detection.
 
-## 📌 Project Overview
-This repository contains an exploratory data analysis (EDA) and data quality auditing pipeline developed in Python to identify anomalous behavior and potential fraud in financial transaction datasets. 
-
-By leveraging data wrangling techniques, statistical aggregation, and rule-based validation, this project addresses real-world business challenges related to **risk management, data integrity, and pattern identification**.
+The project addresses real-world business challenges related to risk management, pattern identification, and imbalanced data classification in credit card transactions.
 
 ---
 
-## 🎯 Key Technical Features
-* **Data Cleaning & Wrangling:** Automated processing of raw transaction logs, handling missing values, data type casting, and duplicate removal using `Pandas`.
-* **Anomaly Detection & Rule-Based Filtering:** Implementation of threshold logic and pattern matching to flag high-risk transactions.
-* **Exploratory Data Analysis (EDA):** Statistical summarization and distribution checks to uncover underlying trends in fraudulent versus legitimate activities.
-* **Data Quality & Traceability:** Structuring validation checks to ensure clean, audit-ready data inputs for downstream analytics or reporting layers.
+## 🎯 Key Features & Workflow
+
+The analysis and modeling workflow is split into two main Jupyter Notebooks:
+
+1. **Exploratory Data Analysis & Data Quality (`notebooks/project_fraud_detection_1.ipynb`)**:
+   - Automated processing of raw transaction logs, handling missing values, and data type casting.
+   - Exploratory Data Analysis (EDA) and statistical checks to uncover underlying patterns in legitimate vs. fraudulent activities.
+   - Anomaly detection, threshold logic, and rule-based filtering to flag high-risk transactions.
+   - Data resampling techniques (such as **SMOTE**) to address severe class imbalance.
+
+2. **Machine Learning & Evaluation (`notebooks/project_fraud_detection_2.ipynb`)**:
+   - Model training using various classification algorithms (e.g., Logistic Regression, Random Forest, XGBoost, LightGBM).
+   - Evaluation focused on metrics suitable for imbalanced datasets: **Precision**, **Recall**, **F1-Score**, **ROC-AUC**, and **PR-AUC**.
+   - Hyperparameter tuning to maximize fraud capture while minimizing false positives.
 
 ---
 
 ## 🛠️ Tech Stack
-* **Language:** Python 3.10+
-* **Data Manipulation:** `Pandas`, `NumPy`
-* **Visualization (Optional):** `Matplotlib`, `Seaborn`
-* **Environment:** VS Code, Jupyter Notebooks / Python Scripts, Git/GitHub
+
+- **Language:** Python 3.10+
+- **Data Wrangling:** `pandas`, `numpy`
+- **Visualization:** `matplotlib`, `seaborn`
+- **Machine Learning & Resampling:** `scikit-learn`, `imbalanced-learn`, `xgboost`, `lightgbm`
+- **Environment & Tools:** VS Code, Jupyter Notebooks, Git & GitHub
 
 ---
 
 ## 📁 Repository Structure
+
 ```text
-├── data/
-│   └── raw_transactions_sample.csv   # Anonymized sample data (if applicable)
+.
 ├── notebooks/
-│   └── fraud_detection_eda.ipynb     # Exploratory analysis and visual insights
-├── src/
-│   └── data_cleaning.py              # Production-ready data preparation script
-├── .gitignore                        # System and environment exclusions
-└── README.md                         # Technical documentation
+│   ├── project_fraud_detection_1.ipynb  # Exploratory Data Analysis & Preprocessing
+│   └── project_fraud_detection_2.ipynb  # Modeling & Performance Evaluation
+├── .gitignore                           # Git exclusions for environment & local data
+├── README.md                            # Project documentation
+└── requirements.txt                     # Project dependencies & versions
